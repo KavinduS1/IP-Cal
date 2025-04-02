@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP/CIDR/Mask Calculator</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+    <h1>IP Address / Subnet Calculator</h1>
+
+    <div class="input-section">
+        <label for="ipInput">IP Address / CIDR:</label>
+        <input type="text" id="ipInput" placeholder="e.g., 192.168.1.10/24 or 10.0.0.5">
+        <!-- Removed note div -->
+
+        <label for="maskInput">Subnet Mask (Optional):</label>
+        <input type="text" id="maskInput" placeholder="e.g., 255.255.255.0">
+        <!-- Removed note div -->
+
+        <div class="button-container">
+            <button id="calculateBtn">Calculate</button>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error hidden"></div>
+
+    <div id="results" class="results hidden">
+        <h2>Network Information</h2>
+        <p><strong>Subnet Mask (Binary):</strong> <span id="subnetMaskBinary"></span></p>
+        <p><strong>Subnet Mask (Decimal):</strong> <span id="subnetMaskDecimal"></span></p>
+        <p><strong>Network Class:</strong> <span id="networkClass"></span></p>
+        <p><strong>CIDR Notation:</strong> <span id="cidrValue"></span></p>
+        <p><strong>Number of Subnets:</strong> <span id="numSubnets"></span></p>
+        <p><strong>Hosts per Subnet:</strong> <span id="numHosts"></span></p>
+        <p><strong>Network Range (ID - Broadcast):</strong> <span id="networkRange"></span></p>
+
+        <h3>Address Information for <span id="givenIp" style="font-weight:bold;"></span></h3>
+        <p><strong>Subnet ID:</strong> <span id="subnetId"></span></p>
+        <p><strong>Broadcast Address:</strong> <span id="broadcastAddress"></span></p>
+        <p><strong>First Usable Host IP:</strong> <span id="firstHostIp"></span></p>
+        <p><strong>Last Usable Host IP:</strong> <span id="lastHostIp"></span></p>
+
+        <!-- Subnet List Section -->
+        <div id="subnetListContainer" class="hidden">
+             <h2>Subnet Ranges within Parent Network</h2>
+             <div id="subnetListInfo" class="list-info"></div>
+             <div id="subnetList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+
+</body>
+</html>
